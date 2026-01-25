@@ -134,24 +134,20 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a
-              href="#"
+            <Link
+              to="/privacy"
               className="hover:text-emerald-400 transition-colors duration-200"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms"
               className="hover:text-emerald-400 transition-colors duration-200"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               Terms of Service
-            </a>
-            <a
-              href="#"
-              className="hover:text-emerald-400 transition-colors duration-200"
-            >
-              Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

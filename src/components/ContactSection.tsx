@@ -8,6 +8,7 @@ import {
   HeartPulse,
   Users,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
   { icon: Droplets, label: "Hydroponic Farming" },
@@ -191,18 +192,37 @@ const ContactSection = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-20 pt-8 border-t border-primary-foreground/20 text-center">
-          <p className="text-primary-foreground/60 text-sm">
-            © 2025 Krishankh Biotech LLP. All rights reserved.{" "}
-            <a
-              href="https://finseraa.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
-            >
-              Designed & Powered by Finsera
-            </a>
-          </p>
+        <div className="mt-20 pt-8 border-t border-primary-foreground/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <p className="text-primary-foreground/60 text-sm">
+              © 2025 Krishankh Biotech LLP. All rights reserved.{" "}
+              <a
+                href="https://finseraa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+              >
+                Designed & Powered by Finsera
+              </a>
+            </p>
+
+            <div className="flex gap-6 text-sm">
+              <Link
+                to="/privacy"
+                className="text-primary-foreground/60 hover:text-emerald-400 transition-colors duration-200"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms"
+                className="text-primary-foreground/60 hover:text-emerald-400 transition-colors duration-200"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
