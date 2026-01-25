@@ -74,6 +74,8 @@ src/
 │── main.tsx
 
 
+
+```
 ## 👨‍💻 Developer
 
 **Rizvan Kurungattil**
@@ -84,4 +86,3 @@ Backend & Full-Stack Developer
 - 📧 Email: rizvankurungattil@gmail.com
 - 🏢 Company: Finsera Ventures
 - 🌍 Website: https://finseraa.com
-```
