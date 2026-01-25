@@ -76,7 +76,10 @@ src/
 
 
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> ef6bebe89e5d4de7076db745390e5f6a04a85a6d
 ## 👨‍💻 Developer
 
 **Rizvan Kurungattil**
