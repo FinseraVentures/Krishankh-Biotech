@@ -321,3 +321,33 @@ body {
     animation-delay: 500ms;
   }
 }
+@keyframes waveLight {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes waveDark {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.animate-waveLight {
+  animation: waveLight 3.5s ease-out infinite;
+}
+
+.animate-waveDark {
+  animation: waveDark 3.5s ease-out infinite;
+  animation-delay: 1.2s;
+}
