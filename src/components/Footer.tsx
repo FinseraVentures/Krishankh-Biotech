@@ -121,7 +121,8 @@ const Footer = () => {
         </div> */}
         <div className="flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
           <p>
-            © {currentYear} Krishankh Biotech. All rights reserved.
+            © {currentYear} Krishankh Biotech LLP | Circular Agriculture & Clean
+            Energy Infrastructure
             <span className="mx-2">|</span>
             <a
               href="https://finseraa.com"

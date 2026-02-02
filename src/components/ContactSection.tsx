@@ -195,7 +195,8 @@ const ContactSection = () => {
         <div className="mt-20 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-primary-foreground/60 text-sm">
-              © 2025 Krishankh Biotech LLP. All rights reserved.{" "}
+              © 2025 Krishankh Biotech LLP | Circular Agriculture & Clean Energy
+              Infrastructure.{" "}
               <a
                 href="https://finseraa.com"
                 target="_blank"

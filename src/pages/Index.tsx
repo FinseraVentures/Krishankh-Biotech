@@ -10,7 +10,7 @@ import RoadmapSection from "@/components/RoadmapSection";
 import VisionSection from "@/components/VisionSection";
 import CircularEcosystem from "@/components/CircularEcosystem";
 import ContactSection from "@/components/ContactSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ContactFloatingButtons from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -27,7 +27,7 @@ const Index = () => {
       <VisionSection />
       <CircularEcosystem />
       <ContactSection />
-      <WhatsAppButton />
+      <ContactFloatingButtons />
     </main>
   );
 };

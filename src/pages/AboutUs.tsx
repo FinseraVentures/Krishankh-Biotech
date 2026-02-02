@@ -6,6 +6,9 @@ import {
   Leaf,
   Recycle,
   Sun,
+  Sprout,
+  Shield,
+  Scale,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -78,7 +81,7 @@ const AboutUs = () => {
                 rural communities.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Based in Tambad, Taluka Bhor, District Pune, we are building a
+                Based in Baner Gaon, Haveli, District Pune, we are building a
                 model biome that demonstrates how sustainable agriculture can be
                 both profitable and regenerative. Our integrated approach
                 combines hydroponic farming, biocoal production, solar energy,
@@ -143,6 +146,83 @@ const AboutUs = () => {
                 ecological damage, and fuel a clean, circular economy at scale.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-padding bg-background">
+        <div className="container-narrow mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+              Our Commitment
+            </span>
+            <h2 className="section-title">Ethics, Responsibility & Impact</h2>
+            <p className="section-subtitle mx-auto">
+              Building a sustainable future through principled practices
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div className="card-elevated text-center">
+              <div className="icon-box mx-auto mb-6 bg-primary/10">
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                Ethical Operations
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Transparent operations with fair rural participation and
+                responsible sourcing at every step.
+              </p>
+            </div>
+
+            <div className="card-elevated text-center">
+              <div className="icon-box mx-auto mb-6 bg-primary/10">
+                <Scale className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                Responsible Growth
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Sustainable agriculture and clean energy practices that scale
+                without compromising our values.
+              </p>
+            </div>
+
+            <div className="card-elevated text-center">
+              <div className="icon-box mx-auto mb-6 bg-primary/10">
+                <Sprout className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                Closed-Loop Systems
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Responsible waste sourcing and renewable energy usage with
+                complete resource utilisation.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-secondary/50 rounded-3xl p-8 md:p-12">
+            <p className="text-lg text-foreground leading-relaxed text-center max-w-4xl mx-auto">
+              At Krishankh Biotech LLP, ethics are embedded into how we grow,
+              source, produce, and scale. We focus on{" "}
+              <span className="font-semibold text-primary">
+                sustainable agriculture
+              </span>
+              ,<span className="font-semibold text-primary"> clean energy</span>
+              ,
+              <span className="font-semibold text-primary">
+                {" "}
+                transparent operations
+              </span>
+              , and
+              <span className="font-semibold text-primary">
+                {" "}
+                fair rural participation
+              </span>
+              . Our practices emphasise responsible waste sourcing, renewable
+              energy usage, and closed-loop resource utilisation.
+            </p>
           </div>
         </div>
       </section>

@@ -1,35 +1,42 @@
-import { Droplets, Recycle, Sun, Factory, Users, ArrowRight } from 'lucide-react';
+import {
+  Droplets,
+  Recycle,
+  Sun,
+  Factory,
+  Users,
+  ArrowRight,
+} from "lucide-react";
 
 const ecosystemSteps = [
   {
     icon: Droplets,
-    title: 'Hydroponic Farming',
-    description: 'Water-efficient crop production',
-    color: 'bg-blue-500',
+    title: "Polyhouse Corps",
+    description: "Water-efficient crop production",
+    color: "bg-blue-500",
   },
   {
     icon: Recycle,
-    title: 'Waste Conversion',
-    description: 'Biomass to biocoal transformation',
-    color: 'bg-green-500',
+    title: "Waste Conversion",
+    description: "Biomass to biocoal transformation",
+    color: "bg-green-500",
   },
   {
     icon: Sun,
-    title: 'Solar Integration',
-    description: '100% renewable energy powered',
-    color: 'bg-amber-500',
+    title: "Solar Integration",
+    description: "100% renewable energy powered",
+    color: "bg-amber-500",
   },
   {
     icon: Factory,
-    title: 'Organic Processing',
-    description: 'Value-added wellness products',
-    color: 'bg-rose-500',
+    title: "Organic Processing",
+    description: "Value-added wellness products",
+    color: "bg-rose-500",
   },
   {
     icon: Users,
-    title: 'Rural Empowerment',
-    description: 'Community-driven prosperity',
-    color: 'bg-purple-500',
+    title: "Rural Empowerment",
+    description: "Community-driven prosperity",
+    color: "bg-purple-500",
   },
 ];
 
@@ -43,7 +50,8 @@ const CircularEcosystem = () => {
             Our Circular Innovation Ecosystem
           </h2>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            An integrated system where every output becomes an input, creating zero-waste operations
+            An integrated system where every output becomes an input, creating
+            zero-waste operations
           </p>
         </div>
 
@@ -51,7 +59,12 @@ const CircularEcosystem = () => {
         <div className="hidden lg:block relative max-w-4xl mx-auto">
           {/* Center Circle */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-primary-foreground/10 border-2 border-primary-foreground/20 flex items-center justify-center">
-            <span className="font-serif text-lg font-semibold text-center">Circular<br />Economy</span>
+            <span className="font-serif text-lg font-semibold text-center">
+              Circular
+              <br />
+              Economy
+            </span>
+            {/* <img src="" alt="" /> */}
           </div>
 
           {/* Circular Path */}
@@ -75,7 +88,9 @@ const CircularEcosystem = () => {
                       <step.icon className="w-9 h-9 text-white" />
                     </div>
                     <h4 className="font-semibold text-sm mb-1">{step.title}</h4>
-                    <p className="text-xs text-primary-foreground/70 max-w-24">{step.description}</p>
+                    <p className="text-xs text-primary-foreground/70 max-w-24">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               );
@@ -113,7 +128,9 @@ const CircularEcosystem = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">{step.title}</h4>
-                    <p className="text-sm text-primary-foreground/70">{step.description}</p>
+                    <p className="text-sm text-primary-foreground/70">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
                 {index < ecosystemSteps.length - 1 && (

@@ -12,6 +12,8 @@ import broccoliImg from "@/assets/microgreen/Broccoli.png";
 import sunflowerImg from "@/assets/microgreen/Sunflower.png";
 import amaranthusRedImg from "@/assets/microgreen/Amranthus.png";
 import dillImg from "@/assets/microgreen/Dill.png";
+import aragula from "@/assets/microgreen/Aragula.png";
+import moongBeans from "@/assets/microgreen/Moong Beans.png";
 
 const varieties = [
   {
@@ -63,6 +65,20 @@ const varieties = [
     popular: true,
     img: dillImg,
   },
+  {
+    name: "Aragula",
+    price: "₹160",
+    weight: "80-100g",
+    popular: false,
+    img: aragula,
+  },
+  {
+    name: "Moong beans",
+    price: "₹145",
+    weight: "80-100g",
+    popular: false,
+    img: moongBeans,
+  },
 ];
 
 const benefits = [
@@ -74,9 +90,8 @@ const benefits = [
   },
   {
     icon: Clock,
-    title: "< 24 Hour Delivery",
-    description:
-      "Harvested fresh and delivered within 24 hours to Pune & Mumbai",
+    title: "Assured timely delivery",
+    description: "Harvested fresh and assured timely delivery to Pune & Mumbai",
   },
   {
     icon: Star,
@@ -120,47 +135,9 @@ const Microgreens = () => {
       <Navbar />
 
       {/* Hero */}
-      {/* <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary/5 via-background to-secondary/20 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='100' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-
-        <div className="container-wide mx-auto px-6 md:px-12 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Leaf className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">
-                Pune & Mumbai Delivery
-              </span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Fresh Microgreens,
-              <span className="block text-primary">Grown to Order</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Premium, chef-grade microgreens harvested and delivered within 24
-              hours. Custom quantities for restaurants, hotels, caterers, and
-              health-conscious consumers.
-            </p>
-
-            <a
-              href="#quote-form"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              Request a Custom Quote
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </section> */}
       <PageHero
         title="Fresh Microgreens, Grown to Order"
-        subtitle="Premium, chef-grade microgreens harvested and delivered within 24 hours. Custom quantities for restaurants, hotels, caterers, and health-conscious consumers."
+        subtitle="Premium, chef-grade microgreens harvested and assured timely delivery. Custom quantities for restaurants, hotels, caterers, and health-conscious consumers."
         badge="Pune & Mumbai Delivery"
         backgroundImage={bg}
       />

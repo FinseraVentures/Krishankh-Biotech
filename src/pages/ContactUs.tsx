@@ -9,7 +9,9 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Our Location",
-    details: ["Tambad, Taluka Bhor", "District Pune, Maharashtra", "India"],
+    details: [
+      "COMM LIGHT SN 242/1/2, NR TEJSWINI SOC D P RD, BANER GAON, PUNE, HAVELI, MAHARASHTRA, INDIA – 411045",
+    ],
   },
   {
     icon: Phone,
@@ -222,11 +224,20 @@ const ContactUs = () => {
       </section>
 
       {/* Map Section Placeholder */}
-      <section className="h-96 bg-secondary/30 flex items-center justify-center">
-        <div className="text-center">
-          <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-          <p className="text-muted-foreground">
-            Tambad, Taluka Bhor, District Pune, Maharashtra, India
+      <section className="h-96 bg-secondary/30 relative overflow-hidden rounded-xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.519988197498!2d73.78686488801432!3d18.560644251865064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf5d40b83d4b%3A0xf774bee65090021a!2sconnectin!5e0!3m2!1sen!2sin!4v1769517511746!5m2!1sen!2sin"
+          className="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+
+        {/* Optional overlay (for branding / readability) */}
+        <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-md rounded-lg p-4 shadow-lg max-w-md">
+          <p className="text-sm text-foreground font-medium">
+            COMM LIGHT SN 242/1/2, NR TEJSWINI SOC D P RD, BANER GAON, PUNE,
+            HAVELI, MAHARASHTRA, INDIA – 411045
           </p>
         </div>
       </section>
