@@ -1,4 +1,13 @@
-import { ArrowRight, ShoppingBag, Handshake, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  ShoppingBag,
+  Handshake,
+  Globe,
+  Smartphone,
+  Sun,
+  Zap,
+  Leaf,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import circularBioeconomy from "@/assets/circular-main.jpeg";
 import bgVid from "@/assets/bg-main.mp4";
@@ -53,9 +62,9 @@ const HeroSection = () => {
             </h1>
 
             {/* Value Proposition */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 animate-fade-up delay-200 leading-relaxed">
+            <p className=" text-xl md:text-2xl font-medium  text-foreground/80 max-w-2xl mx-auto lg:mx-0 mb-10 animate-fade-up delay-200 leading-relaxed ">
               We grow premium microgreens & exotic produce, convert agri-waste
-              into biocoal, and power farms with solar — creating a profitable,
+              into biocoal, and power farms with solar creating a profitable,
               sustainable ecosystem.
             </p>
 
@@ -94,52 +103,55 @@ const HeroSection = () => {
 
             {/* Quick Stats */}
             <div className="mt-12 animate-fade-up delay-400">
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-10">
-                <div className="text-center lg:text-left">
-                  <span className="text-2xl md:text-3xl font-bold text-primary">
-                    7+
+              <div
+                className="
+  flex
+  items-center
+  justify-center lg:justify-start
+  gap-6
+  whitespace-nowrap
+  overflow-x-auto
+  text-center lg:text-left
+"
+              >
+                <div className="flex items-center gap-2">
+                  <Leaf className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-sm md:text-base text-foreground">
+                    <strong className="text-primary">7+</strong> Microgreen
+                    Varieties
                   </span>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Microgreen Varieties
-                  </p>
                 </div>
-                <div className="text-center lg:text-left">
-                  <span className="text-2xl md:text-3xl font-bold text-primary">
-                    On time delivery
+
+                <div className="flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-sm md:text-base text-foreground">
+                    Bio-Coal for{" "}
+                    <strong className="text-primary">Industrial & PSU</strong>{" "}
+                    Use
                   </span>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Farm to Door
-                  </p>
                 </div>
-                <div className="text-center lg:text-left">
-                  <span className="text-2xl md:text-3xl font-bold text-primary">
-                    B2B
+
+                <div className="flex items-center gap-2">
+                  <Sun className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-sm md:text-base text-foreground">
+                    <strong className="text-primary">Solar-Powered</strong>{" "}
+                    Operations
                   </span>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    & Retail Ready
-                  </p>
                 </div>
-                <div className="text-center lg:text-left">
-                  <span className="text-2xl md:text-3xl font-bold text-primary">
-                    ESG
+
+                <div className="flex items-center gap-2">
+                  <Smartphone className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-sm md:text-base text-foreground">
+                    <strong className="text-primary">Krish-E</strong> Rural
+                    Aggregation Platform
+                    <span className="ml-1 text-xs text-primary">
+                      (Launching)
+                    </span>
                   </span>
-                  <p className="text-xs text-muted-foreground mt-1">Aligned</p>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Right Column - Circular Bioeconomy Image */}
-          {/* <div className="hidden lg:flex items-center justify-center animate-fade-up delay-200 mix-blend-multiply">
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/10  blur-3xl scale-100 mix-blend-multiply" />
-              <img
-                src={circularBioeconomy}
-                alt="Circular Bioeconomy - From Biomass to Products through sustainable processing and recycling"
-                className="relative w-full mix-blend-multiply "
-              />
-            </div>
-          </div> */}
         </div>
       </div>
 
