@@ -8,6 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { sendFormEmail } from "@/lib/sendFormEmail";
+import logoImg from "@/assets/Logo.png";
 
 const STORAGE_KEY = "krishankh_lead_popup_shown";
 const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
@@ -21,6 +22,9 @@ const LeadPopup = () => {
     interest: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [inactivityTimer, setInactivityTimer] = useState<NodeJS.Timeout | null>(
+    null,
+  );
 
   useEffect(() => {
     const checkAndShowPopup = () => {
@@ -42,13 +46,26 @@ const LeadPopup = () => {
     checkAndShowPopup();
   }, []);
 
+  // Auto-close form after 10 seconds of inactivity
+  useEffect(() => {
+    if (isOpen && !isSubmitted) {
+      const timer = setTimeout(() => {
+        handleClose();
+      }, 10000); // 10 seconds
+      setInactivityTimer(timer);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, isSubmitted]);
+
   const handleClose = () => {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
     setIsOpen(false);
     localStorage.setItem(STORAGE_KEY, Date.now().toString());
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (inactivityTimer) clearTimeout(inactivityTimer);
     sendFormEmail({
       formType: "newsletter",
       name: formData.name,
@@ -74,15 +91,28 @@ const LeadPopup = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Reset timer on user input
+    if (inactivityTimer) {
+      clearTimeout(inactivityTimer);
+      const newTimer = setTimeout(() => {
+        handleClose();
+      }, 10000);
+      setInactivityTimer(newTimer);
+    }
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-md bg-background border-border">
         <DialogHeader className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary flex items-center justify-center">
-            <Leaf className="w-8 h-8 text-primary-foreground" />
+          <div className="mx-auto mb-4 flex justify-center">
+            <img
+              src={logoImg}
+              alt="Krishankh Biotech Logo"
+              className="w-72 h-auto -my-[110px]"
+            />
           </div>
+
           <DialogTitle className="font-serif text-2xl text-foreground">
             Welcome to Krishankh Biotech
           </DialogTitle>
@@ -169,7 +199,7 @@ const LeadPopup = () => {
 
             <button
               type="submit"
-              className="btn-primary w-[65%] sm:w-auto mx-auto sm:mx-0 text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg group flex items-center justify-center"
+              className="btn-primary w-[85%] mx-auto text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg group flex items-center justify-center"
             >
               <span>Get Updates</span>
               <Send className="ml-2 w-4 h-4 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
