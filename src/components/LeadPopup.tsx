@@ -1,23 +1,24 @@
-import { useState, useEffect } from 'react';
-import { X, Send, Leaf } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { X, Send, Leaf } from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
-const STORAGE_KEY = 'krishankh_lead_popup_shown';
+const STORAGE_KEY = "krishankh_lead_popup_shown";
 const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
 
 const LeadPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    interest: '',
+    name: "",
+    email: "",
+    phone: "",
+    interest: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -48,19 +49,30 @@ const LeadPopup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Lead form submitted:', formData);
+    sendFormEmail({
+      formType: "newsletter",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      meta: {
+        interest: formData.interest,
+      },
+    });
+
     setIsSubmitted(true);
     localStorage.setItem(STORAGE_KEY, Date.now().toString());
-    
+
     // Close after showing success message
     setTimeout(() => {
       setIsOpen(false);
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', interest: '' });
+      setFormData({ name: "", email: "", phone: "", interest: "" });
     }, 2000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -82,11 +94,23 @@ const LeadPopup = () => {
         {isSubmitted ? (
           <div className="text-center py-8">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-              <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <svg
+                className="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
-            <h3 className="font-serif text-xl font-semibold text-foreground mb-2">Thank You!</h3>
+            <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+              Thank You!
+            </h3>
             <p className="text-muted-foreground">We'll be in touch soon.</p>
           </div>
         ) : (
@@ -143,9 +167,12 @@ const LeadPopup = () => {
               </select>
             </div>
 
-            <button type="submit" className="btn-primary w-full group">
-              Get Updates
-              <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <button
+              type="submit"
+              className="btn-primary w-[65%] sm:w-auto mx-auto sm:mx-0 text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg group flex items-center justify-center"
+            >
+              <span>Get Updates</span>
+              <Send className="ml-2 w-4 h-4 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <p className="text-xs text-center text-muted-foreground">

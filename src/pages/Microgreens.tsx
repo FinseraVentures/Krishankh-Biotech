@@ -134,7 +134,7 @@ const Microgreens = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    const phoneNumber = "919876543210";
+    const phoneNumber = "918826425252";
     const text = encodeURIComponent(
       `Hi! I'd like to request a quote for microgreens.\n\nName: ${formData.name}\nBusiness: ${formData.businessType}\nVarieties: ${formData.varieties}\nQuantity: ${formData.quantity}\nMessage: ${formData.message}`,
     );
@@ -603,7 +603,7 @@ const Microgreens = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="w-[85%] mx-auto flex items-center justify-center gap-3 px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 Request Quote via WhatsApp
                 <ArrowRight className="w-5 h-5" />

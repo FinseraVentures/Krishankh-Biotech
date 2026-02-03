@@ -15,6 +15,7 @@ import {
   Store,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
 const partnerTypes = [
   {
@@ -76,11 +77,16 @@ const Partners = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "919876543210";
-    const text = encodeURIComponent(
-      `Hi! I'm interested in partnering with Krishankh Biotech.\n\nName: ${formData.name}\nCompany: ${formData.company}\nPartner Type: ${formData.partnerType}\nMessage: ${formData.message}`,
-    );
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
+    sendFormEmail({
+      formType: "enquiry",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      meta: {
+        interest: formData.partnerType,
+      },
+    });
   };
 
   const handleChange = (
@@ -332,7 +338,7 @@ const Partners = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-accent text-accent-foreground font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="w-[85%] mx-auto flex items-center justify-center gap-3 px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl bg-accent text-accent-foreground font-semibold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 Start Conversation
                 <ArrowRight className="w-5 h-5" />

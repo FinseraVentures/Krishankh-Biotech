@@ -231,9 +231,7 @@ const Navbar = () => {
                       <button
                         onClick={() => toggleDropdown(link.label)}
                         className={`flex items-center justify-between w-full py-2 ${
-                          active
-                            ? "text-primary font-semibold"
-                            : "text-white/90"
+                          active ? "text-gold font-semibold" : "text-white/90"
                         }`}
                       >
                         {link.label}
@@ -257,8 +255,8 @@ const Navbar = () => {
                               }}
                               className={`block w-full text-left py-2 ${
                                 isActiveRoute(child.href)
-                                  ? "text-primary font-semibold"
-                                  : "text-muted-foreground"
+                                  ? "text-gold font-semibold"
+                                  : "text-white/90"
                               }`}
                             >
                               {child.label}
@@ -271,7 +269,7 @@ const Navbar = () => {
                     <button
                       onClick={() => handleNavClick(link.href, link.isRoute)}
                       className={`block w-full text-left py-2 ${
-                        active ? "text-primary font-semibold" : "text-white/90"
+                        active ? "text-gold font-semibold" : "text-white/90"
                       }`}
                     >
                       {link.label}

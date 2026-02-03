@@ -9,6 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
 const quickLinks = [
   { icon: Droplets, label: "Hydroponic Farming" },
@@ -29,8 +30,17 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log("Form submitted:", formData);
-    alert("Thank you for your interest! We will get back to you soon.");
+    // console.log("Form submitted:", formData);
+    // alert("Thank you for your interest! We will get back to you soon.");
+    console.log(formData);
+    sendFormEmail({
+      formType: "contact",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    });
+
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
@@ -48,10 +58,10 @@ const ContactSection = () => {
       <div className="container-wide mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Join us in revolutionizing rural India
           </h2>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+          <p className="text-base sm:text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
             Partner with us to build a sustainable future for India's farming
             communities
           </p>
@@ -73,8 +83,8 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Quick Links */}
-          <div>
-            <h3 className="font-serif text-2xl font-semibold mb-8">
+          <div className="w-[85%] mx-auto sm:w-full lg:mx-0">
+            <h3 className="font-serif text-xl sm:text-2xl font-semibold mb-8">
               Explore Our Solutions
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,7 +94,9 @@ const ContactSection = () => {
                   className="flex items-center gap-3 p-4 bg-primary-foreground/5 rounded-xl hover:bg-primary-foreground/10 transition-colors duration-200 cursor-pointer"
                 >
                   <link.icon className="w-5 h-5 text-primary-foreground/70" />
-                  <span className="font-medium">{link.label}</span>
+                  <span className="font-medium text-sm sm:text-base">
+                    {link.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -92,7 +104,7 @@ const ContactSection = () => {
             {/* Location Info */}
             <div className="mt-12 p-6 bg-primary-foreground/5 rounded-2xl">
               <h4 className="font-semibold mb-2">Our Location</h4>
-              <p className="text-primary-foreground/70">
+              <p className="text-primary-foreground/70 text-sm sm:text-base">
                 Tambad, Taluka Bhor
                 <br />
                 District Pune, Maharashtra
@@ -103,8 +115,8 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div id="contact-form">
-            <h3 className="font-serif text-2xl font-semibold mb-8">
+          <div id="contact-form" className="w-[85%] mx-auto sm:w-full">
+            <h3 className="font-serif text-xl sm:text-2xl font-semibold mb-8">
               Get in Touch
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -183,9 +195,12 @@ const ContactSection = () => {
                 />
               </div>
 
-              <button type="submit" className="btn-gold w-full group">
-                Send Message
-                <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <button
+                type="submit"
+                className="btn-gold w-[85%] text-sm sm:text-base px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg group flex items-center justify-center mx-auto"
+              >
+                <span className="inline-block">Send Message</span>
+                <Send className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
           </div>

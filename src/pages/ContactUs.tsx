@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import contactHero from "@/assets/contact-hero.jpg";
+import { sendFormEmail } from "@/lib/sendFormEmail";
 
 const contactInfo = [
   {
@@ -16,7 +17,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 XXXXX XXXXX"],
+    details: ["+91 8826425252"],
   },
   {
     icon: Mail,
@@ -45,7 +46,17 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for your message! We will get back to you soon.");
+    sendFormEmail({
+      formType: "support",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      meta: {
+        subject: formData.subject,
+      },
+    });
+
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
@@ -211,10 +222,10 @@ const ContactUs = () => {
 
                   <button
                     type="submit"
-                    className="btn-primary w-full md:w-auto group"
+                    className="btn-primary w-[85%] mx-auto text-sm md:text-base px-6 py-2.5 md:px-8 md:py-3 rounded-lg group flex items-center justify-center"
                   >
-                    Send Message
-                    <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <span>Send Message</span>
+                    <Send className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
               </div>
