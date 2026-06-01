@@ -26,6 +26,12 @@ import amaranthusRedImg from "@/assets/microgreen/Amranthus.png";
 import dillImg from "@/assets/microgreen/Dill.png";
 import aragula from "@/assets/microgreen/Aragula.png";
 import moongBeans from "@/assets/microgreen/Moong Beans.png";
+import mustardImg from "@/assets/microgreen/Mustard.jpeg";
+import fenugreekImg from "@/assets/microgreen/Fenugreek.jpeg";
+import alfalafaImg from "@/assets/microgreen/Alfalfa.jpeg";
+import peasShootsImg from "@/assets/microgreen/Pea Shoots.jpeg";
+import swissChardImg from "@/assets/microgreen/Swiss Chard.jpeg";
+
 
 const varieties = [
   {
@@ -34,6 +40,9 @@ const varieties = [
     weight: "80-100g",
     popular: true,
     img: radishRedImg,
+    tagline: "Bold • Peppery • Crisp",
+    description:
+      "Vibrant crimson stems with a bold, spicy peppery kick. Perfect for adding a satisfying crunch and striking color to any dish.",
   },
   {
     name: "Radish Green",
@@ -41,6 +50,9 @@ const varieties = [
     weight: "80-100g",
     popular: false,
     img: radishGreenImg,
+    tagline: "Sharp • Fresh • Classic",
+    description:
+      "Crisp, fresh, and intensely flavorful. Delivers a sharp, classic radish bite in a delicate green leaf.",
   },
   {
     name: "Knol Knol",
@@ -48,6 +60,9 @@ const varieties = [
     weight: "80-100g",
     popular: false,
     img: knolKnolImg,
+    tagline: "Mild • Sweet • Hearty",
+    description:
+      "Features a crisp texture and a mild, sweet cabbage-like flavor. A hearty and versatile green for everyday luxury.",
   },
   {
     name: "Broccoli",
@@ -55,6 +70,9 @@ const varieties = [
     weight: "80-100g",
     popular: true,
     img: broccoliImg,
+    tagline: "Earthy • Dense • Delicate",
+    description:
+      "Mild, earthy, and highly nutrient-dense. Celebrated for its delicate texture and exceptionally high sulforaphane content.",
   },
   {
     name: "Sunflower",
@@ -62,6 +80,9 @@ const varieties = [
     weight: "80-100g",
     popular: true,
     img: sunflowerImg,
+    tagline: "Nutty • Thick • Juicy",
+    description:
+      "Rich and nutty with a thick, juicy crunch. Acts as an excellent hearty base for premium salads and gourmet sandwiches.",
   },
   {
     name: "Amaranthus Red",
@@ -69,6 +90,9 @@ const varieties = [
     weight: "80-100g",
     popular: false,
     img: amaranthusRedImg,
+    tagline: "Fuchsia • Earthy • Striking",
+    description:
+      "Stunning glowing fuchsia color with a mild, earthy taste. The ultimate luxury garnish for high-end plating.",
   },
   {
     name: "Dill (Premium)",
@@ -76,20 +100,79 @@ const varieties = [
     weight: "80-100g",
     popular: true,
     img: dillImg,
+    tagline: "Aromatic • Elegant • Intense",
+    description:
+      "Feathery, elegant, and highly aromatic. Delivers a concentrated burst of classic dill flavor, ideal for seafood.",
   },
   {
-    name: "Aragula",
+    name: "Arugula",
     price: "₹160",
     weight: "80-100g",
     popular: false,
     img: aragula,
+    tagline: "Nutty • Bold • Punchy",
+    description:
+      "Bold, nutty, and distinctly peppery. A delicate, sophisticated leaf that packs a punchy flavor profile.",
+  },
+ {
+  name: "Moong Beans",
+  price: "₹145",
+  weight: "80-100g",
+  popular: false,
+  img: moongBeans,
+  tagline: "SWEET FRESH • HYDRATING ",
+  description:
+    "Packed with protein, fiber, and essential nutrients, Moong Bean sprouts offer a fresh, crunchy texture and mild flavor. Perfect for salads, sandwiches, stir-fries, and healthy snacks."
+},
+{
+  name: "Mustard",
+  price: "₹170",
+  weight: "80-100g",
+  popular: true,
+  img: mustardImg,
+  tagline: "ZESTY  • PUNGENT  • BOLD",
+  description:
+    "  Delivers a sharp, zesty, and intensely spicy kick reminiscent of horseradish. Ideal for adding bold flavor and a vibrant green visual contrast to meats, salads, and gourmet sandwiches."
+},
+{
+  name: "Fenugreek",
+  price: "₹170",
+  weight: "80-100g",
+  popular: true,
+  img: fenugreekImg,
+  tagline: "BITTER  • SPICY  • AROMATIC",
+  description:
+    "Features a distinct, slightly bitter, and intensely aromatic flavor profile. A staple for adding complex, earthy notes to savory dishes, curries, and flatbreads."
+},
+{
+  name: "Alfa Alfa",
+  price: "₹180",
+  weight: "80-100g",
+  popular: false,
+  img: alfalafaImg,
+  tagline: "MILD  • NUTTY  • CRISP",
+  description:
+    "Delicate and crisp with a mild, slightly nutty flavor. Highly nutritious and excellent for adding light volume and a satisfying fresh crunch to sandwiches, wraps, and salads."
+},
+ {
+    name: "Peas (Shoots)",
+    price: "₹170",
+    weight: "80-100g",
+    popular: true,
+    img: peasShootsImg,
+    tagline: "Sweet • Tender • Fresh",
+    description:
+      "Sweet farm-fresh pea flavor with elegant, tender tendrils. Beautifully delicate yet bursting with taste.",
   },
   {
-    name: "Moong beans",
-    price: "₹145",
+    name: "Swiss Chard",
+    price: "₹180",
     weight: "80-100g",
     popular: false,
-    img: moongBeans,
+    img: swissChardImg,
+    tagline: "Vibrant • Earthy • Sweet",
+    description:
+      "Earthy and slightly sweet, featuring vibrant brightly colored stems that instantly elevate the aesthetics of any plate.",
   },
 ];
 
@@ -387,74 +470,87 @@ const Microgreens = () => {
               </div>
             ))}
           </div> */}
+
+          {/* ORGGGGGGGGGGGGGGGGGGGGGG */}
+
+
+          {/* chanagagsgaga */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {varieties.map((variety) => (
               <div
                 key={variety.name}
-                className={`relative rounded-xl border border-border p-6 transition-all duration-300 hover:-translate-y-1 overflow-hidden ${
-                  variety.img
-                    ? "text-white hover:shadow-xl"
-                    : "bg-card hover:shadow-lg"
-                }`}
+                className={`relative h-[320px] rounded-2xl border border-border overflow-hidden transition-all duration-300 hover:-translate-y-1 ${variety.img
+                  ? "text-white hover:shadow-2xl"
+                  : "bg-card hover:shadow-lg"
+                  }`}
                 style={
                   variety.img
                     ? {
-                        backgroundImage: `url(${variety.img})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }
+                      backgroundImage: `url(${variety.img})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }
                     : undefined
                 }
               >
-                {/* Overlay for image cards */}
+                {/* IMAGE OVERLAYS */}
                 {variety.img && (
-                  <div className="absolute inset-0 bg-black/45 rounded-xl" />
+                  <>
+                    {/* Slight dark overlay */}
+                    <div className="absolute inset-0 bg-black/15" />
+
+                    {/* Bottom Blur Layer */}
+                    <div className="absolute bottom-0 left-0 right-0 h-44">
+                      <div className="absolute inset-0 " />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent" />
+                    </div>
+
+                    {/* Additional fade for smoother transition */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                  </>
                 )}
 
-                {/* Content */}
-                <div className="relative z-10">
+                {/* CONTENT */}
+                <div className="relative z-10 flex flex-col h-full p-6">
+                  {/* Popular Badge */}
                   {variety.popular && (
-                    //
                     <span
-                      className={`absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-medium ${
-                        variety.img
-                          ? "bg-yellow-500/80 text-white"
-                          : "bg-yellow-100 text-yellow-700"
-                      }`}
+                      className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${variety.img
+                        ? "bg-yellow-500 text-white"
+                        : "bg-yellow-100 text-yellow-700"
+                        }`}
                     >
                       Popular
                     </span>
                   )}
 
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4  invisible ${
-                      variety.img ? "bg-white/20" : "bg-primary/10"
-                    }`}
-                  >
-                    {/* <Leaf
-                      className={`w-6 h-6 ${
-                        variety.img ? "text-white" : "text-primary"
-                      }`}
-                    /> */}
+                  {/* Push content to bottom */}
+                  <div className="mt-auto">
+                    <h3
+                      className={`text-2xl font-bold mb-2 ${variety.img ? "text-white" : "text-foreground"
+                        }`}
+                    >
+                      {variety.name}
+                    </h3>
+
+                    <p
+                      className={`text-xs uppercase tracking-[3px] font-medium ${variety.img
+                        ? "text-yellow-300"
+                        : "text-primary"
+                        }`}
+                    >
+                      {variety.tagline}
+                    </p>
+
+                    <p
+                      className={`mt-3 text-sm leading-relaxed line-clamp-3 ${variety.img
+                        ? "text-white/90"
+                        : "text-muted-foreground"
+                        }`}
+                    >
+                      {variety.description}
+                    </p>
                   </div>
-
-                  <h3 className="text-lg font-bold mb-1">{variety.name}</h3>
-
-                  <p
-                    className={`text-sm mb-3 ${
-                      variety.img ? "text-white/80" : "text-muted-foreground"
-                    }`}
-                  >
-                    {variety.weight} box
-                  </p>
-
-                  <p
-                    className={`text-2xl font-bold ${
-                      variety.img ? "text-white" : "text-primary"
-                    }`}
-                  >
-                    {variety.price}/-
-                  </p>
                 </div>
               </div>
             ))}
