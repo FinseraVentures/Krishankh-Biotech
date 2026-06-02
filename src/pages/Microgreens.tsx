@@ -14,6 +14,12 @@ import {
   ArrowDown,
   Sparkles,
   Instagram,
+  Grid3x3,
+  Calculator,
+  Globe,
+  Phone,
+  Mail,
+  Leaf as LeafIcon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import bg from "@/assets/Microgreens.png";
@@ -114,47 +120,47 @@ const varieties = [
     description:
       "Bold, nutty, and distinctly peppery. A delicate, sophisticated leaf that packs a punchy flavor profile.",
   },
- {
-  name: "Moong Beans",
-  price: "₹145",
-  weight: "80-100g",
-  popular: false,
-  img: moongBeans,
-  tagline: "SWEET FRESH • HYDRATING ",
-  description:
-    "Packed with protein, fiber, and essential nutrients, Moong Bean sprouts offer a fresh, crunchy texture and mild flavor. Perfect for salads, sandwiches, stir-fries, and healthy snacks."
-},
-{
-  name: "Mustard",
-  price: "₹170",
-  weight: "80-100g",
-  popular: true,
-  img: mustardImg,
-  tagline: "ZESTY  • PUNGENT  • BOLD",
-  description:
-    "  Delivers a sharp, zesty, and intensely spicy kick reminiscent of horseradish. Ideal for adding bold flavor and a vibrant green visual contrast to meats, salads, and gourmet sandwiches."
-},
-{
-  name: "Fenugreek",
-  price: "₹170",
-  weight: "80-100g",
-  popular: true,
-  img: fenugreekImg,
-  tagline: "BITTER  • SPICY  • AROMATIC",
-  description:
-    "Features a distinct, slightly bitter, and intensely aromatic flavor profile. A staple for adding complex, earthy notes to savory dishes, curries, and flatbreads."
-},
-{
-  name: "Alfa Alfa",
-  price: "₹180",
-  weight: "80-100g",
-  popular: false,
-  img: alfalafaImg,
-  tagline: "MILD  • NUTTY  • CRISP",
-  description:
-    "Delicate and crisp with a mild, slightly nutty flavor. Highly nutritious and excellent for adding light volume and a satisfying fresh crunch to sandwiches, wraps, and salads."
-},
- {
+  {
+    name: "Moong Beans",
+    price: "₹145",
+    weight: "80-100g",
+    popular: false,
+    img: moongBeans,
+    tagline: "SWEET FRESH • HYDRATING ",
+    description:
+      "Packed with protein, fiber, and essential nutrients, Moong Bean sprouts offer a fresh, crunchy texture and mild flavor. Perfect for salads, sandwiches, stir-fries, and healthy snacks."
+  },
+  {
+    name: "Mustard",
+    price: "₹170",
+    weight: "80-100g",
+    popular: true,
+    img: mustardImg,
+    tagline: "ZESTY  • PUNGENT  • BOLD",
+    description:
+      "  Delivers a sharp, zesty, and intensely spicy kick reminiscent of horseradish. Ideal for adding bold flavor and a vibrant green visual contrast to meats, salads, and gourmet sandwiches."
+  },
+  {
+    name: "Fenugreek",
+    price: "₹170",
+    weight: "80-100g",
+    popular: true,
+    img: fenugreekImg,
+    tagline: "BITTER  • SPICY  • AROMATIC",
+    description:
+      "Features a distinct, slightly bitter, and intensely aromatic flavor profile. A staple for adding complex, earthy notes to savory dishes, curries, and flatbreads."
+  },
+  {
+    name: "Alfa Alfa",
+    price: "₹180",
+    weight: "80-100g",
+    popular: false,
+    img: alfalafaImg,
+    tagline: "MILD  • NUTTY  • CRISP",
+    description:
+      "Delicate and crisp with a mild, slightly nutty flavor. Highly nutritious and excellent for adding light volume and a satisfying fresh crunch to sandwiches, wraps, and salads."
+  },
+  {
     name: "Peas (Shoots)",
     price: "₹170",
     weight: "80-100g",
@@ -708,6 +714,191 @@ const Microgreens = () => {
           </div>
         </div>
       </section>
+
+      {/* Navigation Cards Section - Portfolio & Calculator */}
+      {/* Navigation Cards Section - Portfolio & Calculator */}
+      <section className="py-16 bg-gradient-to-b from-background to-secondary/20">
+        <div className="container-wide mx-auto px-6 md:px-12">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Explore More
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Discover our premium quality standards or calculate your custom requirements
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Portfolio Card */}
+            <Link
+              to="/portfolio"
+              className="group relative bg-card rounded-2xl border border-border overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-8 text-center">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Grid3x3 className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">
+                  Our Portfolio
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Explore our premium quality microgreens collection and see what makes us different
+                </p>
+                <div className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                  <span>View Portfolio</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+            </Link>
+
+            {/* Requirements Calculator Card */}
+            <Link
+              to="/requirement-calculator"
+              className="group relative bg-card rounded-2xl border border-border overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-8 text-center">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Calculator className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">
+                  Requirement Calculator
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Calculate your custom microgreens requirements and get instant estimates
+                </p>
+                <div className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                  <span>Calculate Now</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Microgreen Synergy Premium Contact Section */}
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-primary/80 py-8 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="contact-pattern" x="0" y="0" width="60" height="60">
+                <circle cx="30" cy="30" r="1.5" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#contact-pattern)" />
+          </svg>
+        </div>
+
+        {/* Decorative Leaves */}
+        <div className="absolute top-0 left-0 w-64 h-64 opacity-10">
+          <LeafIcon className="w-full h-full text-white" />
+        </div>
+        <div className="absolute bottom-0 right-0 w-48 h-48 opacity-10 rotate-45">
+          <LeafIcon className="w-full h-full text-white" />
+        </div>
+
+        <div className="relative z-10 container-wide mx-auto px-6 md:px-12 text-center">
+          {/* Main Quote */}
+          <div className="max-w-4xl mx-auto mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-light tracking-wide mb-6 text-white">
+              CURATED FOR EXCELLENCE.
+              <br />
+              <span className="font-semibold text-primary-foreground/90">GROWN FOR TASTE.</span>
+            </h2>
+            <div className="w-20 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8" />
+          </div>
+
+          {/* Contact Info */}
+          <div className="max-w-3xl mx-auto mb-6">
+            <p className="text-white/80 text-lg md:text-xl mb-6 font-light">
+              To request samples, access our harvest schedule, or discuss a partnership:
+            </p>
+
+            <div className="space-y-4">
+              {/* <div className="flex items-center justify-center gap-3 text-white/80 hover:text-white transition-colors group">
+                <Globe className="w-5 h-5 text-primary-foreground/70 group-hover:scale-110 transition-transform" />
+                <a 
+                  href="https://www.krishankhbiotech.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:underline underline-offset-4"
+                >
+                  www.krishankhbiotech.com
+                </a>
+              </div> */}
+
+             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-6 text-center px-4">
+
+  {/* Website */}
+  <div className="flex items-center justify-center gap-2 text-white/80 hover:text-white transition-colors group break-all">
+    <Globe className="w-5 h-5 shrink-0 text-primary-foreground/70 group-hover:scale-110 transition-transform" />
+    <a
+      href="https://www.krishankhbiotech.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline underline-offset-4"
+    >
+      www.krishankhbiotech.com
+    </a>
+  </div>
+
+  <span className="hidden sm:inline text-white/30">•</span>
+
+  {/* Phone */}
+  <div className="flex items-center justify-center gap-2 text-white/80 hover:text-white transition-colors group">
+    <Phone className="w-5 h-5 shrink-0 text-primary-foreground/70 group-hover:scale-110 transition-transform" />
+    <a
+      href="tel:+917821018001"
+      className="hover:underline underline-offset-4"
+    >
+      +91 78210 18001
+    </a>
+  </div>
+
+  <span className="hidden sm:inline text-white/30">•</span>
+
+  {/* Email */}
+  <div className="flex items-center justify-center gap-2 text-white/80 hover:text-white transition-colors group break-all">
+    <Mail className="w-5 h-5 shrink-0 text-primary-foreground/70 group-hover:scale-110 transition-transform" />
+    <a
+      href="mailto:microgreensynergy@gmail.com"
+      className="hover:underline underline-offset-4"
+    >
+      microgreensynergy@gmail.com
+    </a>
+  </div>
+
+</div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mx-auto mb-8" />
+
+          {/* Bottom Highlights */}
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary-foreground/60" />
+              <span className="text-sm uppercase tracking-wider text-white/70 font-medium">100% Organic</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary-foreground/60" />
+              <span className="text-sm uppercase tracking-wider text-white/70 font-medium">Urban Wellness</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary-foreground/60" />
+              <span className="text-sm uppercase tracking-wider text-white/70 font-medium">Sustainable Farming</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Original Footer */}
       <Footer />
     </main>
   );
